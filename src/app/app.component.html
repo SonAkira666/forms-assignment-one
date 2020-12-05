@@ -17,12 +17,12 @@
       <form (ngSubmit)="onSubmit(form)" #form="ngForm">
         <div class="form-group">
           <label for="email">E-Mail</label>
-          <input type="text" name="email" class="form-control" email required ngModel #email="ngModel">
+          <input type="email" name="email" class="form-control" id="email" email required ngModel #email="ngModel">
           <p *ngIf="email.invalid && email.touched">This e-mail address is not valid!</p>
         </div>
         <div class="form-group">
           <label for="subscription">Subscription</label>
-          <select name="subscription" ngModel="advanced" class="form-control">
+          <select name="subscription" ngModel="advanced" class="form-control" id="subscription">
             <option value="basic">Basic</option>
             <option value="advanced">Advanced</option>
             <option value="pro">Pro</option>
@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="text" name="password" class="form-control" required ngModel #password="ngModel">
+          <input type="password" name="password" class="form-control" id="password" required ngModel #password="ngModel">
           <p *ngIf="password.invalid && password.touched">This password is not valid!</p>
         </div>
           <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
